@@ -63,7 +63,7 @@ AVERAGE(Fato_Pacientes[BMI])
 
 ## Principais Insights e Conclusões de Negócio
 1. **O Peso é o Maior Gatilho:** Pacientes categorizados na faixa de "Obesidade" apresentam uma taxa de incidência de diabetes drasticamente superior à média geral da população.
-2. **O Impacto Silencioso dos Hábitos:** Indivíduos com um perfil comportamental de "Risco Extremo" (fumadores ativos, alto consumo de álcool e hábitos sedentários) mostram uma probabilidade exponencialmente maior de pré-diabetes, even em grupos mais jovens (18 a 29 anos).
+2. **O Impacto Silencioso dos Hábitos:** Indivíduos com um perfil comportamental de "Risco Extremo" (fumadores ativos, alto consumo de álcool e hábitos sedentários) mostram uma probabilidade exponencialmente maior de pré-diabetes, mesmo em grupos mais jovens (18 a 29 anos).
 
 ## Impacto Prático e Público-Alvo
 * **Hospitais e Clínicas:** As equipas de triagem podem sinalizar proativamente indivíduos de alto risco antes mesmo da conclusão dos exames laboratoriais finais.
