@@ -54,7 +54,7 @@ AVERAGE(Fato_Pacientes[BMI])
 ```
 
 ### Layout e Visuais do Dashboard:
-* **Painel de KPIs:** Cartões superiores que acompanham o Total de Pacientes, a Taxa de Incidência Geral e a Média de IMC.
+* **Painel de KPIs:** Cartões superiores que acompanham o Total de Pacientes, Total de Risco, a Taxa de Incidência Geral e a Média de IMC.
 * **Análise de Correlação:** Gráfico de barras analisando a relação entre as categorias de peso (IMC) e as taxas de diagnóstico de diabetes.
 * **Visões Comportamentais:** Gráfico de donut avaliando o peso direto dos perfis comportamentais nos diagnósticos positivos.
 * **Filtros Dinâmicos:** Segmentadores que permitem análises profundas e imediatas por Faixa Etária e Status da Glicose.
