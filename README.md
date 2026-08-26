@@ -1,26 +1,26 @@
-# Dashboard de Análise Preventiva de Risco de Diabetes
+# Diabetes Risk Preventive Analysis Dashboard
 
-Um projeto abrangente de Engenharia de Dados e Business Intelligence focado na identificação de perfis de risco de pacientes, análise de distribuição do Índice de Massa Corporal (IMC) e avaliação de comportamentos de estilo de vida para apoiar decisões preventivas na área da saúde.
+A comprehensive Data Engineering and Business Intelligence project focused on identifying patient risk profiles, analyzing body mass index (BMI) distributions, and evaluating lifestyle behaviors to support preventive healthcare decisions.
 
-![Visualização do Dashboard](dashboard_overview.png)
+![Dashboard Preview](dashboard_overview.png)
 
-## Etapa 1: Engenharia de Dados (SQL Server)
-Em vez de carregar os arquivos brutos diretamente na ferramenta de BI, apliquei **Feature Engineering** na camada do banco de dados para garantir performance, integridade dos dados e centralização das regras de negócio.
+## 🏗️ Phase 1: Data Engineering (SQL Server)
+Instead of loading raw files directly into the BI tool, **Feature Engineering** was applied at the database level to guarantee performance, data integrity, and centralized business rules.
 
-### Ações Realizadas no Banco de Dados:
-1. **Limpeza e Tipagem de Dados:** Tratamento de tipos de dados específicos para valores numéricos de precisão (`DECIMAL`, `INT`).
-2. **Categorização Clínica (Regras da OMS):** Automatização da segmentação por faixa etária e classificações médicas para `BMI` (IMC), `Fasting_Blood_Sugar` (Glicemia de Jejum) e `HbA1c_Level` (Hemoglobina Glicada) utilizando consultas estruturadas com `CASE WHEN`.
-3. **Score de Risco de Estilo de Vida:** Agregação de múltiplas variáveis comportamentais (`Smoking_Status`, `Alcohol_Consumption`, `Physical_Activity_Level`) num índice preditivo de risco unificado.
-4. **Modelagem Dimensional:** Desconstrução do arquivo único original (flat file) num modelo **Star Schema**, dividindo os dados numa tabela central `Fato_Pacientes` e numa tabela otimizada `Dim_EstiloVida` (Dimensão) para maximizar a performance dos joins.
+### Database Actions Realized:
+1. **Data Cleaning & Typing:** Handled data types specifically for precision numerical values (`DECIMAL`, `INT`).
+2. **Clinical Categorization (WHO Rules):** Automated age group segmentation and medical classifications for `BMI`, `Fasting_Blood_Sugar`, and `HbA1c_Level` using structured `CASE WHEN` queries.
+3. **Lifestyle Risk Score:** Aggregated multiple behavioral variables (`Smoking_Status`, `Alcohol_Consumption`, `Physical_Activity_Level`) into a unified predictive risk index.
+4. **Dimensional Modeling:** Deconstructed the original flat file into a **Star Schema** model, splitting data into a central `Fato_Pacientes` (Fact) and an optimized `Dim_EstiloVida` (Dimension) table to maximize join performance.
 
-> 📂 *Todos os scripts SQL completos para criação de tabelas e Views encontram-se dentro do ficheiro `011_pipeline_dados.sql` neste repositório.*
+> 📂 *All full SQL scripts for table creation and Views are located inside the `011_pipeline_dados.sql` file in this repository.*
 
 ---
 
-## Etapa 2: Business Intelligence (Power BI)
-Os dados otimizados foram importados para o Power BI através de **SQL Views** utilizando o **Modo Import** (mecanismo VertiPaq) para interações ultra-rápidas no relatório.
+## 📊 Phase 2: Business Intelligence (Power BI)
+The optimized data was imported into Power BI via **SQL Views** using the **Import Mode** (VertiPaq engine) for lightning-fast report interactions.
 
-### Métricas Desenvolvidas (Fórmulas DAX):
+### Developed Metrics (DAX Formulas):
 
 ```dax
 Total Pacientes = 
@@ -53,23 +53,24 @@ Media IMC =
 AVERAGE(Fato_Pacientes[BMI])
 ```
 
-### Layout e Visuais do Dashboard:
-* **Painel de KPIs:** Cartões superiores que acompanham o Total de Pacientes, Total de Risco, a Taxa de Incidência Geral e a Média de IMC.
-* **Análise de Correlação:** Gráfico de barras analisando a relação entre as categorias de peso (IMC) e as taxas de diagnóstico de diabetes.
-* **Visões Comportamentais:** Gráfico de donut avaliando o peso direto dos perfis comportamentais nos diagnósticos positivos.
-* **Filtros Dinâmicos:** Segmentadores que permitem análises profundas e imediatas por Faixa Etária e Status da Glicose.
+### Dashboard Layout & Visuals:
+* **KPI Scorecard:** Top cards tracking Total Cohort, Overall Incidence Rate, and Average BMI.
+* **Correlation Analysis:** Bar chart analyzing the relationship between weight categories (BMI) and Diabetes diagnosis rates.
+* **Behavioral Views:** Donut chart evaluating the direct weight of behavioral profiles on positive diagnoses.
+* **Dynamic Filters:** Slicers allowing immediate deep dives by Age Bracket and Glucose Status.
 
 ---
 
-## Principais Insights e Conclusões de Negócio
-1. **O Peso é o Maior Gatilho:** Pacientes categorizados na faixa de "Obesidade" apresentam uma taxa de incidência de diabetes drasticamente superior à média geral da população.
-2. **O Impacto Silencioso dos Hábitos:** Indivíduos com um perfil comportamental de "Risco Extremo" (fumadores ativos, alto consumo de álcool e hábitos sedentários) mostram uma probabilidade exponencialmente maior de pré-diabetes, mesmo em grupos mais jovens (18 a 29 anos).
+## 💡 Key Insights & Business Conclusions
+1. **Weight is the Main Trigger:** Patients categorized under "Obesity" present a drastically higher Diabetes incidence rate compared to the general population average.
+2. **The Silent Impact of Habits:** Individuals with an "Extreme Risk" behavioral profile (active smokers, high alcohol intake, and sedentary habits) show an exponentially higher probability of pre-diabetes, even within younger groups (18-29 years old).
 
-## Impacto Prático e Público-Alvo
-* **Hospitais e Clínicas:** As equipas de triagem podem sinalizar proativamente indivíduos de alto risco antes mesmo da conclusão dos exames laboratoriais finais.
-* **Operadoras de Saúde/Seguradoras:** Permite a criação de programas direcionados de medicina preventiva (por exemplo, programas específicos de perda de peso para os grupos demográficos mais vulneráveis).
-* **Gestores de Saúde Pública:** Auxilia na alocação eficiente de recursos e no desenvolvimento de campanhas educativas de saúde personalizadas.
+## 🚀 Practical Impact & Target Audience
+* **Hospitals & Clinics:** Triage teams can proactively flag high-risk individuals before final lab tests are completed.
+* **Health Insurance Providers:** Enables the creation of targeted preventive medicine programs (e.g., specific weight loss tracks for highly vulnerable demographics).
+* **Public Health Administrators:** Supports efficient resource allocation and customized educational health campaigns.
 
-## 🗃️ Fonte dos Dados & Privacidade
-O conjunto de dados históricos utilizado para esta análise foi obtido no **Kaggle**. Trata-se de dados públicos de saúde anonimizados. Todos os registos foram rigorosamente higienizados e estão em conformidade com as regulamentações globais de privacidade de dados, garantindo que nenhuma Informação Pessoal Identificável (PII) seja exposta.
+---
 
+## 🗃️ Data Source & Privacy
+The historical dataset utilized for this analysis was sourced from **Kaggle**. It features anonymized public healthcare data. All records are strictly sanitized and comply with global data privacy compliance, ensuring no Personally Identifiable Information (PII) is exposed.
