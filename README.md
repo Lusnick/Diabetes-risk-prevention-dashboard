@@ -4,7 +4,7 @@ A comprehensive Data Engineering and Business Intelligence project focused on id
 
 ![Dashboard Preview](dashboard_overview.png)
 
-## 🏗️ Phase 1: Data Engineering (SQL Server)
+##  Phase 1: Data Engineering (SQL Server)
 Instead of loading raw files directly into the BI tool, **Feature Engineering** was applied at the database level to guarantee performance, data integrity, and centralized business rules.
 
 ### Database Actions Realized:
@@ -17,7 +17,7 @@ Instead of loading raw files directly into the BI tool, **Feature Engineering** 
 
 ---
 
-## 📊 Phase 2: Business Intelligence (Power BI)
+##  Phase 2: Business Intelligence (Power BI)
 The optimized data was imported into Power BI via **SQL Views** using the **Import Mode** (VertiPaq engine) for lightning-fast report interactions.
 
 ### Developed Metrics (DAX Formulas):
@@ -56,11 +56,11 @@ AVERAGE(Fato_Pacientes[BMI])
 
 ---
 
-## 💡 Key Insights & Business Conclusions
+##  Key Insights & Business Conclusions
 1. **Weight is the Main Trigger:** Patients categorized under "Obesity" present a drastically higher Diabetes incidence rate compared to the general population average.
 2. **The Silent Impact of Habits:** Individuals with an "Extreme Risk" behavioral profile (active smokers, high alcohol intake, and sedentary habits) show an exponentially higher probability of pre-diabetes, even within younger groups (18-29 years old).
 
-## 🚀 Practical Impact & Target Audience
+##  Practical Impact & Target Audience
 * **Hospitals & Clinics:** Triage teams can proactively flag high-risk individuals before final lab tests are completed.
 * **Health Insurance Providers:** Enables the creation of targeted preventive medicine programs (e.g., specific weight loss tracks for highly vulnerable demographics).
 * **Public Health Administrators:** Supports efficient resource allocation and customized educational health campaigns.
