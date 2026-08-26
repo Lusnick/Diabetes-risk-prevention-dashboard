@@ -38,7 +38,11 @@ DIVIDE(
     0
 )
 ```
-
+```
+Taxa Risco (%) = 
+DIVIDE(SUM(Fato_Pacientes[Diagnostico_Risco_Alto]),
+COUNT(Fato_Pacientes[Patient_ID]), 0)
+```
 ```dax
 Media IMC = 
 AVERAGE(Fato_Pacientes[BMI])
