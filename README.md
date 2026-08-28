@@ -13,7 +13,7 @@ Instead of loading raw files directly into the BI tool, **Feature Engineering** 
 3. **Lifestyle Risk Score:** Aggregated multiple behavioral variables (`Smoking_Status`, `Alcohol_Consumption`, `Physical_Activity_Level`) into a unified predictive risk index.
 4. **Dimensional Modeling:** Deconstructed the original flat file into a **Star Schema** model, splitting data into a central `Fato_Pacientes` (Fact) and an optimized `Dim_EstiloVida` (Dimension) table to maximize join performance.
 
-> 📂 *All full SQL scripts for table creation and Views are located inside the `011_pipeline_dados.sql` file in this repository.*
+> 📂 *All full SQL scripts for table creation and Views are located inside the `01_data_pipeline.sql` file in this repository.*
 
 ---
 
