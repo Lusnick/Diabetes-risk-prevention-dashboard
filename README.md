@@ -2,7 +2,7 @@
 
 A comprehensive Data Engineering and Business Intelligence project focused on identifying patient risk profiles, analyzing body mass index (BMI) distributions, and evaluating lifestyle behaviors to support preventive healthcare decisions.
 
-![Dashboard Preview](dashboard_overview.png)
+![Dashboard Preview](dashboard_overView.png)
 
 ##  Phase 1: Data Engineering (SQL Server)
 Instead of loading raw files directly into the BI tool, **Feature Engineering** was applied at the database level to guarantee performance, data integrity, and centralized business rules.
